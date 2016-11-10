@@ -74,6 +74,64 @@
 
 #แบบฝึกหัด
 ให้วาดรูปวิว โดยใช้รูปร่างต่างๆ ที่ทำการทดลองใน Lab นี้
+![](https://github.com/settapong123/LAB-10/blob/master/imgs/view.JPG?raw=true)
+```cs
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace lab10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            
+            Rectangle rect = new Rectangle(425, 100, 200, 200);
+            e.Graphics.DrawEllipse(Pens.Cyan, rect);
+
+            Rectangle rect1 = new Rectangle(425, 100, 200, 200);
+            e.Graphics.DrawEllipse(Pens.DeepPink, rect);
+
+            Rectangle rect2 = new Rectangle(425, 100, 200, 200);
+            e.Graphics.DrawEllipse(Pens.DarkSlateBlue, rect);
+
+            Rectangle rect3 = new Rectangle(425, 100, 200, 200);
+            e.Graphics.DrawEllipse(Pens.Firebrick, rect);
+
+            Pen pen = new Pen(Color.Aqua, 3);
+            Point[] pt = { new Point(40, 450), new Point(140, 438),
+            new Point(240, 450),new Point(340, 438), new Point(440, 450),
+            new Point(540, 438),new Point(640, 450), new Point(740, 438),
+            new Point(840, 450),new Point(940, 438), new Point(1040, 450)};
+            e.Graphics.DrawCurve(pen, pt);
+
+            Pen peny = new Pen(Color.Aqua, 3);
+            Point[] pty ={
+            new Point(40, 500), new Point(140, 490),
+            new Point(240, 500),new Point(340, 490), new Point(440, 500),
+            new Point(540, 490),new Point(640, 500), new Point(740, 490),
+            new Point(840, 500),new Point(940, 490), new Point(1040, 500)};
+            
+            e.Graphics.DrawCurve(peny, pty);
+
+        }
+    }
+}
+
+```
 
 ##เอกสารอ้างอิง
 ### [Graphics Methods](https://msdn.microsoft.com/en-us/library/system.drawing.graphics_methods(v=vs.110).aspx)
